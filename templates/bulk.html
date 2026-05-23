@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prescription OCR - Bulk</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, "Segoe UI", Arial; background: #f5f7fa; margin: 0; padding: 20px; color: #1a1a1a; }
+.container { max-width: 1400px; margin: 0 auto; }
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+h1 { color: #2c3e50; margin: 0; }
+.nav a { margin-left: 16px; color: #4a90e2; text-decoration: none; font-weight: 500; }
+.nav a.active { color: #1a1a1a; pointer-events: none; }
+.subtitle { color: #6c757d; margin-bottom: 24px; }
+.card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 20px; }
+.upload-area { border: 2px dashed #cbd5e0; border-radius: 8px; padding: 50px 20px; text-align: center; cursor: pointer; background: #fafbfc; }
+.upload-area:hover { border-color: #4a90e2; background: #f0f7ff; }
+.upload-area.dragover { border-color: #4a90e2; background: #e3f2fd; }
+.icon { font-size: 48px; margin-bottom: 12px; }
+input[type="file"] { display: none; }
+button { background: #4a90e2; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 14px; cursor: pointer; }
+button:hover { background: #357abd; }
+button:disabled { background: #adb5bd; cursor: not-allowed; }
+button.secondary { background: #6c757d; }
+.progress { margin: 16px 0; padding: 12px 16px; border-radius: 6px; background: #fff8e1; color: #8a6d3b; font-size: 14px; }
+.progress-bar { height: 8px; background: #e9ecef; border-radius: 4px; overflow: hidden; margin-top: 8px; }
+.progress-fill { height: 100%; background: #4a90e2; }
+.file-list { list-style: none; padding: 0; margin: 16px 0; max-height: 200px; overflow-y: auto; }
+.file-list li { display: flex; justify-content: space-between; padding: 6px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+.status-pending { color: #6c757d; }
+.status-processing { color: #ffc107; }
+.status-done { color: #28a745; }
+.status-error { color: #dc3545; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8f9fa; padding: 10px; text-align: left; font-weight: 600; color: #495057; border-bottom: 2px solid #e2e8f0; }
+td { padding: 8px 10px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+.badge { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 10px; font-weight: 600; text-transform: uppercase; margin-right: 2px; }
+.badge.high { background: #d4edda; color: #155724; }
+.badge.medium { background: #fff3cd; color: #856404; }
+.badge.low { background: #f8d7da; color: #721c24; }
+.badge.quality-excellent, .badge.quality-good { background: #d4edda; color: #155724; }
+.badge.quality-fair { background: #fff3cd; color: #856404; }
+.badge.quality-poor, .badge.quality-unusable { background: #f8d7da; color: #721c24; }
+.empty { color: #adb5bd; text-align: center; padding: 60px 20px; }
+.stats { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+.stat { background: #f8f9fa; padding: 10px 16px; border-radius: 8px; flex: 1; min-width: 140px; }
+.stat .num { font-size: 22px; font-weight: 700; color: #2c3e50; }
+.stat .lbl { font-size: 11px; color: #6c757d; text-transform: uppercase; }
+.med-row { font-size: 12px; padding: 2px 0; }
+.actions { display: flex; gap: 10px; margin-top: 16px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="topbar">
+    <h1>Prescription OCR - Bulk</h1>
+    <div class="nav"><a href="/">Single Upload</a><a class="active">Bulk Upload</a></div>
+  </div>
+  <p class="subtitle">Upload multiple prescriptions at once.</p>
+  <div class="card">
+    <div id="uploadArea" class="upload-area">
+      <div class="icon">[ + ]</div>
+      <p><strong>Click to choose</strong> or drag and drop multiple files</p>
+      <p style="font-size:12px;color:#6c757d;">JPG/PNG/WEBP, many at once</p>
+      <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.webp" multiple>
+    </div>
+    <ul id="fileList" class="file-list"></ul>
+    <div id="progress" style="display:none"></div>
+    <div class="actions">
+      <button id="startBtn" disabled>Start Processing</button>
+      <button id="clearBtn" class="secondary" style="display:none">Clear</button>
+      <button id="downloadBtn" class="secondary" style="display:none">Download Summary CSV</button>
+    </div>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Results</h3>
+    <div id="results"><div class="empty">No results yet.</div></div>
+  </div>
+</div>
+<script>
+const ua=document.getElementById('uploadArea'),fi=document.getElementById('fileInput'),
+fl=document.getElementById('fileList'),sb=document.getElementById('startBtn'),
+cb=document.getElementById('clearBtn'),db=document.getElementById('downloadBtn'),
+pr=document.getElementById('progress'),rd=document.getElementById('results');
+let files=[],results=[];
+
+ua.addEventListener('click',()=>fi.click());
+fi.addEventListener('change',e=>add(Array.from(e.target.files)));
+ua.addEventListener('dragover',e=>{e.preventDefault();ua.classList.add('dragover');});
+ua.addEventListener('dragleave',()=>ua.classList.remove('dragover'));
+ua.addEventListener('drop',e=>{e.preventDefault();ua.classList.remove('dragover');add(Array.from(e.dataTransfer.files));});
+
+function add(arr){
+  arr=arr.filter(f=>/\.(jpe?g|png|webp)$/i.test(f.name));
+  files=files.concat(arr);renderList();sb.disabled=files.length===0;
+}
+
+function renderList(){
+  fl.innerHTML='';
+  files.forEach(f=>{
+    const li=document.createElement('li');
+    li.innerHTML=`<span>${f.name} (${(f.size/1024).toFixed(1)} KB)</span>
+      <span class="status-${f.status||'pending'}">${f.status||'pending'}</span>`;
+    fl.appendChild(li);
+  });
+}
+
+sb.addEventListener('click',async()=>{
+  sb.disabled=true;results=[];
+  rd.innerHTML='<div class="empty">Processing...</div>';pr.style.display='block';
+  for(let i=0;i<files.length;i++){
+    const f=files[i];f.status='processing';renderList();
+    pr.innerHTML=`Processing ${i+1} of ${files.length}: ${f.name}
+      <div class="progress-bar"><div class="progress-fill" style="width:${(i/files.length)*100}%"></div></div>`;
+    try{
+      const fd=new FormData();fd.append('image',f);
+      const t0=Date.now();
+      const r=await fetch('/bulk/extract',{method:'POST',body:fd});
+      const d=await r.json();
+      const el=((Date.now()-t0)/1000).toFixed(1);
+      if(d.error){f.status='error';results.push({filename:f.name,error:d.error,elapsed:el});}
+      else{f.status='done';results.push({filename:f.name,data:d,elapsed:el});}
+    }catch(e){f.status='error';results.push({filename:f.name,error:e.message,elapsed:'?'});}
+    renderList();renderResults();
+  }
+  pr.innerHTML=`Done - processed ${files.length} file(s).
+    <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>`;
+  sb.disabled=false;cb.style.display='inline-block';db.style.display='inline-block';
+});
+
+cb.addEventListener('click',()=>{
+  files=[];results=[];fl.innerHTML='';rd.innerHTML='<div class="empty">No results yet.</div>';
+  pr.style.display='none';cb.style.display='none';db.style.display='none';sb.disabled=true;
+});
+
+db.addEventListener('click',()=>{
+  const rows=[['Filename','Quality','Score','Doctor','Patient','Date','Type','Name','Strength','Form','Frequency','Duration','Quantity','Confidence']];
+  for(const r of results){
+    if(r.error){rows.push([r.filename,'','','','','','ERROR',r.error,'','','','','','']);continue;}
+    const d=r.data,q=d.image_quality||{};
+    const meds=d.medicines||[],tests=d.tests||[];
+    if(meds.length===0&&tests.length===0){
+      rows.push([r.filename,q.rating||'',q.score||'',d.doctor_name||'',d.patient_name||'',d.date||'','','(empty)','','','','','','']);continue;}
+    let first=true;
+    meds.forEach(m=>{
+      rows.push([first?r.filename:'',first?(q.rating||''):'',first?(q.score||''):'',
+        first?(d.doctor_name||''):'',first?(d.patient_name||''):'',first?(d.date||''):'',
+        'medicine',m.name||'',m.strength||'',m.form||'',m.frequency||'',m.duration||'',m.quantity||'',m.confidence||'']);
+      first=false;});
+    tests.forEach(t=>{
+      rows.push([first?r.filename:'',first?(q.rating||''):'',first?(q.score||''):'',
+        first?(d.doctor_name||''):'',first?(d.patient_name||''):'',first?(d.date||''):'',
+        'test',t.name||'','','','','','',t.confidence||'']);
+      first=false;});
+  }
+  const csv=rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob=new Blob(['\uFEFF'+csv],{type:'text/csv'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='bulk_summary.csv';a.click();
+});
+
+function renderResults(){
+  if(results.length===0){rd.innerHTML='<div class="empty">No results yet.</div>';return;}
+  const total=results.length,ok=results.filter(r=>!r.error).length;
+  let tm=0,tt=0;
+  results.forEach(r=>{if(r.data){tm+=(r.data.medicines||[]).length;tt+=(r.data.tests||[]).length;}});
+  let h=`<div class="stats">
+    <div class="stat"><div class="num">${total}</div><div class="lbl">Files</div></div>
+    <div class="stat"><div class="num" style="color:${(total-ok)?'#dc3545':'#28a745'}">${ok}/${total}</div><div class="lbl">Succeeded</div></div>
+    <div class="stat"><div class="num">${tm}</div><div class="lbl">Medicines</div></div>
+    <div class="stat"><div class="num">${tt}</div><div class="lbl">Tests</div></div></div>`;
+  h+='<table><thead><tr><th>File</th><th>Quality</th><th>Doctor</th><th>Medicines</th><th>Tests</th><th>Time</th></tr></thead><tbody>';
+  for(const r of results){
+    if(r.error){h+=`<tr><td>${r.filename}</td><td colspan="5" style="color:#dc3545;">Error: ${r.error}</td></tr>`;continue;}
+    const d=r.data,q=d.image_quality||{},meds=d.medicines||[],tests=d.tests||[];
+    h+=`<tr><td><strong>${r.filename}</strong></td>
+      <td><span class="badge quality-${q.rating}">${q.rating||'?'}</span><br>
+      <span style="font-size:11px;color:#6c757d">${q.score||0}/100</span></td>
+      <td>${d.doctor_name||'-'}<br><span style="color:#6c757d;font-size:11px">${d.patient_name||''} ${d.date?'- '+d.date:''}</span></td><td>`;
+    if(meds.length===0)h+='-';
+    else meds.forEach(m=>{const c=(m.confidence||'low').toLowerCase();
+      h+=`<div class="med-row"><span class="badge ${c}">${c}</span> ${m.name||'?'} ${m.strength?'('+m.strength+')':''}</div>`;});
+    h+='</td><td>';
+    if(tests.length===0)h+='-';
+    else tests.forEach(t=>{const c=(t.confidence||'low').toLowerCase();
+      h+=`<div class="med-row"><span class="badge ${c}">${c}</span> ${t.name||'?'}</div>`;});
+    h+=`</td><td>${r.elapsed}s</td></tr>`;
+  }
+  h+='</tbody></table>';rd.innerHTML=h;
+}
+</script>
+</body>
+</html>

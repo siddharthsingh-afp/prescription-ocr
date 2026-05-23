@@ -1,0 +1,88 @@
+{
+  "doctor_name": "M. A. MIR",
+  "patient_name": "Mr Lakhoy",
+  "date": "16/09/2023",
+  "diagnosis": "ALD, AP: 310, LSM: 8.3",
+  "medicines": [
+    {
+      "name": "Hep Kart",
+      "strength": "400",
+      "form": null,
+      "dosage": "1-0-1",
+      "frequency": "Twice daily",
+      "duration": null,
+      "quantity": null,
+      "confidence": "high",
+      "notes": null,
+      "quantity_value": 1
+    },
+    {
+      "name": "Udih",
+      "strength": "300",
+      "form": null,
+      "dosage": "1-0-1",
+      "frequency": "Twice daily",
+      "duration": null,
+      "quantity": null,
+      "confidence": "high",
+      "notes": null,
+      "quantity_value": 1
+    },
+    {
+      "name": "Folvate",
+      "strength": "5 mg",
+      "form": null,
+      "dosage": "OD",
+      "frequency": "Once daily",
+      "duration": null,
+      "quantity": null,
+      "confidence": "high",
+      "notes": null,
+      "quantity_value": 1
+    }
+  ],
+  "tests": [
+    {
+      "name": "CBC",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "LFT",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "KFT",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "PT INR",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "viral markers",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "Fibroscan",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    }
+  ],
+  "warnings": [],
+  "image_quality": {
+    "score": 100,
+    "rating": "excellent",
+    "message": "Sharp and clear."
+  }
+}

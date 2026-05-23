@@ -1,0 +1,299 @@
+{
+  "doctor_name": "M. A. MIR",
+  "patient_name": "Lakshay",
+  "date": "16/9/24",
+  "diagnosis": "ALD, AP: 310, LSM: 8.3",
+  "medicines": [
+    {
+      "name": "Hep Kart",
+      "strength": "400",
+      "form": null,
+      "dosage": "1",
+      "frequency": "1-0-1",
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Name 'Hep Kart' is unclear and strength '400' is likely mg. Form, duration, and quantity are not specified. Dosage '1' is inferred from frequency '1-0-1'.",
+      "match": {
+        "matched": false,
+        "confidence": "none",
+        "score": 0.44,
+        "sku": null,
+        "canonical_name": null,
+        "generic_name": null,
+        "strength": null,
+        "form": null,
+        "schedule": null,
+        "mrp": null,
+        "alternatives": []
+      },
+      "quantity_value": 1
+    },
+    {
+      "name": "Udal",
+      "strength": "300",
+      "form": null,
+      "dosage": "1",
+      "frequency": "1-0-1",
+      "duration": null,
+      "quantity": null,
+      "confidence": "medium",
+      "notes": "Name 'Udal' is unclear, possibly 'Udiliv'. Strength '300' is likely mg. Form, duration, and quantity are not specified.",
+      "match": {
+        "matched": true,
+        "confidence": "low",
+        "score": 0.6,
+        "sku": "MED0056",
+        "canonical_name": "Daonil",
+        "generic_name": "Glibenclamide",
+        "strength": "5mg",
+        "form": "Tablet",
+        "schedule": "H",
+        "mrp": "32.0",
+        "alternatives": [
+          {
+            "sku": "MED0058",
+            "name": "Humalog 100IU/ml (Insulin Lispro)",
+            "score": 0.55
+          },
+          {
+            "sku": "MED0033",
+            "name": "Dolo 650mg (Paracetamol)",
+            "score": 0.5
+          },
+          {
+            "sku": "MED0076",
+            "name": "Avil 25mg (Pheniramine)",
+            "score": 0.5
+          }
+        ]
+      },
+      "quantity_value": 1
+    },
+    {
+      "name": "Folrate",
+      "strength": "5mg",
+      "form": null,
+      "dosage": "1",
+      "frequency": "OD",
+      "duration": null,
+      "quantity": null,
+      "confidence": "medium",
+      "notes": "Name 'Folrate' is unclear, possibly 'Folvite'. Form, duration, and quantity are not specified. Dosage '1' is inferred from frequency 'OD'.",
+      "match": {
+        "matched": true,
+        "confidence": "medium",
+        "score": 0.77,
+        "sku": "MED0090",
+        "canonical_name": "Folvite",
+        "generic_name": "Folic Acid",
+        "strength": "5mg",
+        "form": "Tablet",
+        "schedule": "OTC",
+        "mrp": "28.0",
+        "alternatives": [
+          {
+            "sku": "MED0018",
+            "name": "Forcan 150mg (Fluconazole)",
+            "score": 0.69
+          },
+          {
+            "sku": "MED0118",
+            "name": "Foracort Combo (Formoterol + Budesonide)",
+            "score": 0.67
+          },
+          {
+            "sku": "MED0046",
+            "name": "Rantac 150mg (Ranitidine)",
+            "score": 0.58
+          }
+        ]
+      },
+      "quantity_value": 1
+    }
+  ],
+  "tests": [
+    {
+      "name": "CBC",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null,
+      "match": {
+        "matched": true,
+        "confidence": "exact",
+        "score": 1.0,
+        "sku": "TST0001",
+        "canonical_name": "CBC",
+        "full_name": "Complete Blood Count",
+        "category": "Blood Test",
+        "price": "350.0",
+        "alternatives": []
+      }
+    },
+    {
+      "name": "LFT",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null,
+      "match": {
+        "matched": true,
+        "confidence": "exact",
+        "score": 1.0,
+        "sku": "TST0007",
+        "canonical_name": "LFT",
+        "full_name": "Liver Function Test",
+        "category": "Blood Test",
+        "price": "850.0",
+        "alternatives": [
+          {
+            "sku": "TST0008",
+            "name": "KFT - Kidney Function Test",
+            "score": 0.67
+          },
+          {
+            "sku": "TST0009",
+            "name": "RFT - Renal Function Test",
+            "score": 0.67
+          },
+          {
+            "sku": "TST0010",
+            "name": "TFT - Thyroid Function Test (T3, T4, TSH)",
+            "score": 0.67
+          }
+        ]
+      }
+    },
+    {
+      "name": "KFT",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null,
+      "match": {
+        "matched": true,
+        "confidence": "exact",
+        "score": 1.0,
+        "sku": "TST0008",
+        "canonical_name": "KFT",
+        "full_name": "Kidney Function Test",
+        "category": "Blood Test",
+        "price": "750.0",
+        "alternatives": [
+          {
+            "sku": "TST0007",
+            "name": "LFT - Liver Function Test",
+            "score": 0.67
+          },
+          {
+            "sku": "TST0009",
+            "name": "RFT - Renal Function Test",
+            "score": 0.67
+          },
+          {
+            "sku": "TST0010",
+            "name": "TFT - Thyroid Function Test (T3, T4, TSH)",
+            "score": 0.67
+          }
+        ]
+      }
+    },
+    {
+      "name": "PT INR",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null,
+      "match": {
+        "matched": true,
+        "confidence": "medium",
+        "score": 0.71,
+        "sku": "TST0046",
+        "canonical_name": "Coagulation",
+        "full_name": "PT, APTT, INR",
+        "category": "Blood Test",
+        "price": "650.0",
+        "alternatives": [
+          {
+            "sku": "TST0024",
+            "name": "CT Brain - CT Scan Brain Plain",
+            "score": 0.5
+          },
+          {
+            "sku": "TST0045",
+            "name": "PFT - Pulmonary Function Test",
+            "score": 0.5
+          },
+          {
+            "sku": "TST0012",
+            "name": "Vitamin D - 25-Hydroxy Vitamin D",
+            "score": 0.46
+          }
+        ]
+      }
+    },
+    {
+      "name": "Viral markers",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null,
+      "match": {
+        "matched": true,
+        "confidence": "low",
+        "score": 0.5,
+        "sku": "TST0026",
+        "canonical_name": "Pap Smear",
+        "full_name": "Pap Smear Test",
+        "category": "Cytology",
+        "price": "850.0",
+        "alternatives": [
+          {
+            "sku": "TST0040",
+            "name": "Typhoid - Widal Test",
+            "score": 0.48
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fibroscan",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null,
+      "match": {
+        "matched": true,
+        "confidence": "low",
+        "score": 0.59,
+        "sku": "TST0025",
+        "canonical_name": "MRI Brain",
+        "full_name": "MRI Brain Plain",
+        "category": "Radiology",
+        "price": "6500.0",
+        "alternatives": [
+          {
+            "sku": "TST0003",
+            "name": "FBS - Fasting Blood Sugar",
+            "score": 0.5
+          },
+          {
+            "sku": "TST0024",
+            "name": "CT Brain - CT Scan Brain Plain",
+            "score": 0.5
+          },
+          {
+            "sku": "TST0028",
+            "name": "Skin Scraping - KOH Mount / Skin Scraping",
+            "score": 0.48
+          }
+        ]
+      }
+    }
+  ],
+  "warnings": [
+    "Medicine 'Hep Kart': Name is unclear, and form, duration, and quantity are missing.",
+    "Medicine 'Udal': Name is unclear, possibly 'Udiliv', and form, duration, and quantity are missing.",
+    "Medicine 'Folrate': Name is unclear, possibly 'Folvite', and form, duration, and quantity are missing."
+  ],
+  "image_quality": {
+    "score": 100,
+    "rating": "excellent",
+    "message": "Image is sharp and clear."
+  }
+}

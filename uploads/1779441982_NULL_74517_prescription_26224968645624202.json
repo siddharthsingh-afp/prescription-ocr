@@ -1,0 +1,85 @@
+{
+  "doctor_name": "Dr. Shenoy M.V.",
+  "patient_name": "Sarju",
+  "date": "17/05/2005",
+  "diagnosis": [
+    "Seborrhoeic dermatitis (face)",
+    "Acrod dermatitis (hand & nail disorder)"
+  ],
+  "medicines": [
+    {
+      "name": "Seborg Shampoo",
+      "strength": null,
+      "form": "Shampoo",
+      "dosage": null,
+      "frequency": "Alternate with Ketogy's Shampoo for head wash",
+      "duration": null,
+      "quantity": null,
+      "confidence": "medium",
+      "notes": "Spelling of 'Seborg' is uncertain. The instruction 'alternate the f/wash' is present, which may apply to alternating with a face wash or using the shampoo as a face wash on alternate days."
+    },
+    {
+      "name": "Ketogy's Shampoo",
+      "strength": null,
+      "form": "Shampoo",
+      "dosage": null,
+      "frequency": "Alternate with Seborg Shampoo for head wash",
+      "duration": null,
+      "quantity": null,
+      "confidence": "medium",
+      "notes": "The instruction 'alternate the f/wash' is present, which may apply to alternating with a face wash or using the shampoo as a face wash on alternate days."
+    },
+    {
+      "name": "Cloxia S.",
+      "strength": null,
+      "form": "Cream",
+      "dosage": "Thin layer",
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Form 'cream' is inferred from application. Dosage, frequency, and duration instructions ('on scaly, pain on me day & alls') are highly illegible and require clarification. 'me day' might mean 'every other day'."
+    },
+    {
+      "name": "Ketoog cream",
+      "strength": null,
+      "form": "Cream",
+      "dosage": null,
+      "frequency": "Twice a day (on scalp and around eyes)",
+      "duration": "20 days",
+      "quantity": null,
+      "confidence": "medium",
+      "notes": "Spelling of 'Ketoog' is slightly uncertain. The instruction 'alls' after duration '20 days' is unclear."
+    },
+    {
+      "name": "Orgide cream",
+      "strength": null,
+      "form": "Cream",
+      "dosage": "Once",
+      "frequency": "Alternate day",
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Spelling of 'Orgide' is uncertain. Application area ('in pubs on fonts, side gums') and duration ('to & alls') are highly illegible and require clarification."
+    },
+    {
+      "name": "Flucasil",
+      "strength": "400 mg",
+      "form": "Tablet",
+      "dosage": "1 tablet",
+      "frequency": "Once a week",
+      "duration": "4 weeks",
+      "quantity": 4,
+      "confidence": "high",
+      "notes": null
+    }
+  ],
+  "warnings": [
+    "Clarify the diagnosis, especially the words 'durudile' and 'regens'.",
+    "Clarify the specific instructions for using 'Seborg Shampoo' and 'Ketogy's Shampoo', particularly the phrase 'alternate the f/wash'.",
+    "Verify the spelling of 'Seborg', 'Ketogy', 'Ketoog', and 'Orgide'.",
+    "Obtain full dosage, frequency, and duration instructions for 'Cloxia S.' cream, as the current instructions are mostly illegible.",
+    "Obtain full application area and duration instructions for 'Orgide cream', as the current instructions are mostly illegible.",
+    "Clarify the meaning of 'alls' found in the duration instructions for 'Ketoog cream' and 'Orgide cream'."
+  ]
+}

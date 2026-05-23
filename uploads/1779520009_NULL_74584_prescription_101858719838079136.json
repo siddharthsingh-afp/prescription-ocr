@@ -1,0 +1,73 @@
+{
+  "doctor_name": "Dr. K. Pradeep",
+  "patient_name": null,
+  "date": "01.05.2023",
+  "diagnosis": [
+    "Telmanis mixed",
+    "Oliguria mixed",
+    "Present mixed"
+  ],
+  "medicines": [],
+  "tests": [
+    {
+      "name": "CBC",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "RFT",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "LFT",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "TSH",
+      "urgency": null,
+      "confidence": "medium",
+      "notes": null
+    },
+    {
+      "name": "Urine",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "Lipids",
+      "urgency": null,
+      "confidence": "medium",
+      "notes": "Interpreted 'Lopids' as 'Lipids' for Lipid Profile."
+    },
+    {
+      "name": "Blood Sugar",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "KFT",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "Urine R/M",
+      "urgency": null,
+      "confidence": "high",
+      "notes": "Urine Routine and Microscopic examination."
+    }
+  ],
+  "warnings": [],
+  "image_quality": {
+    "score": 32,
+    "rating": "fair",
+    "message": "Slightly blurry."
+  }
+}

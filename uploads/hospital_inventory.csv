@@ -1,0 +1,179 @@
+sku_id,item_type,brand_name,generic_name,strength,form,schedule,pack_size,mrp,hospital_id
+MED0001,medicine,Augmentin,Amoxicillin + Clavulanic Acid,625mg,Tablet,H,10 tabs,245.0,HOSP_001
+MED0002,medicine,Azithral,Azithromycin,500mg,Tablet,H,3 tabs,88.5,HOSP_001
+MED0003,medicine,Azithral,Azithromycin,250mg,Tablet,H,6 tabs,76.0,HOSP_001
+MED0004,medicine,Cifran,Ciprofloxacin,500mg,Tablet,H,10 tabs,95.0,HOSP_001
+MED0005,medicine,Norflox,Norfloxacin,400mg,Tablet,H,10 tabs,52.0,HOSP_001
+MED0006,medicine,Cefixime,Cefixime,200mg,Tablet,H,10 tabs,165.0,HOSP_001
+MED0007,medicine,Taxim-O,Cefixime,200mg,Tablet,H,10 tabs,175.0,HOSP_001
+MED0008,medicine,Moxikind-CV,Amoxicillin + Clavulanic Acid,625mg,Tablet,H,10 tabs,215.0,HOSP_001
+MED0009,medicine,Doxy-1,Doxycycline,100mg,Capsule,H,10 caps,38.0,HOSP_001
+MED0010,medicine,Metrogyl,Metronidazole,400mg,Tablet,H,15 tabs,24.5,HOSP_001
+MED0011,medicine,Flagyl,Metronidazole,400mg,Tablet,H,15 tabs,28.0,HOSP_001
+MED0012,medicine,Septran-DS,Sulfamethoxazole + Trimethoprim,800mg+160mg,Tablet,H,10 tabs,32.0,HOSP_001
+MED0013,medicine,Erythrocin,Erythromycin,250mg,Tablet,H,10 tabs,45.0,HOSP_001
+MED0014,medicine,Clavam,Amoxicillin + Clavulanic Acid,625mg,Tablet,H,10 tabs,235.0,HOSP_001
+MED0015,medicine,Ciplox,Ciprofloxacin,500mg,Tablet,H,10 tabs,92.0,HOSP_001
+MED0016,medicine,Flucan,Fluconazole,150mg,Tablet,H,1 tab,28.0,HOSP_001
+MED0017,medicine,Flucan,Fluconazole,400mg,Tablet,H,1 tab,65.0,HOSP_001
+MED0018,medicine,Forcan,Fluconazole,150mg,Tablet,H,1 tab,26.5,HOSP_001
+MED0019,medicine,Itrasys,Itraconazole,100mg,Capsule,H,10 caps,165.0,HOSP_001
+MED0020,medicine,Sporanox,Itraconazole,100mg,Capsule,H,4 caps,285.0,HOSP_001
+MED0021,medicine,Terbinaforce,Terbinafine,250mg,Tablet,H,7 tabs,145.0,HOSP_001
+MED0022,medicine,Ketoz,Ketoconazole,2%,Cream,H,30g,95.0,HOSP_001
+MED0023,medicine,Ketoz-S,Ketoconazole,2%,Shampoo,OTC,60ml,165.0,HOSP_001
+MED0024,medicine,Nizral,Ketoconazole,2%,Shampoo,OTC,60ml,245.0,HOSP_001
+MED0025,medicine,Sebowash,Ketoconazole + ZPTO,1%+1%,Shampoo,OTC,100ml,195.0,HOSP_001
+MED0026,medicine,Orgide,Sertaconazole,2%,Cream,H,30g,175.0,HOSP_001
+MED0027,medicine,Candiderma,Beclomethasone + Clotrimazole + Neomycin,Combo,Cream,H,15g,85.0,HOSP_001
+MED0028,medicine,Quadriderm,Beclomethasone + Clotrimazole + Gentamicin + Tolnaftate,Combo,Cream,H,20g,78.0,HOSP_001
+MED0029,medicine,Cloxia-S,Clotrimazole,1%,Lotion,OTC,30ml,85.0,HOSP_001
+MED0030,medicine,Itch Guard,Clotrimazole,1%,Cream,OTC,20g,65.0,HOSP_001
+MED0031,medicine,Crocin,Paracetamol,500mg,Tablet,OTC,15 tabs,28.0,HOSP_001
+MED0032,medicine,Crocin Advance,Paracetamol,500mg,Tablet,OTC,15 tabs,30.0,HOSP_001
+MED0033,medicine,Dolo,Paracetamol,650mg,Tablet,OTC,15 tabs,32.0,HOSP_001
+MED0034,medicine,Calpol,Paracetamol,500mg,Tablet,OTC,15 tabs,32.0,HOSP_001
+MED0035,medicine,Combiflam,Ibuprofen + Paracetamol,400mg+325mg,Tablet,OTC,20 tabs,48.0,HOSP_001
+MED0036,medicine,Brufen,Ibuprofen,400mg,Tablet,OTC,15 tabs,35.0,HOSP_001
+MED0037,medicine,Voveran,Diclofenac,50mg,Tablet,H,10 tabs,28.0,HOSP_001
+MED0038,medicine,Voveran SR,Diclofenac,100mg,Tablet,H,10 tabs,42.0,HOSP_001
+MED0039,medicine,Aceclo,Aceclofenac,100mg,Tablet,H,10 tabs,38.0,HOSP_001
+MED0040,medicine,Hifenac,Aceclofenac,100mg,Tablet,H,10 tabs,35.0,HOSP_001
+MED0041,medicine,Zerodol,Aceclofenac,100mg,Tablet,H,10 tabs,39.0,HOSP_001
+MED0042,medicine,Tramadol,Tramadol,50mg,Capsule,H,10 caps,45.0,HOSP_001
+MED0043,medicine,Pan,Pantoprazole,40mg,Tablet,H,15 tabs,95.0,HOSP_001
+MED0044,medicine,Pantocid,Pantoprazole,40mg,Tablet,H,15 tabs,105.0,HOSP_001
+MED0045,medicine,Omez,Omeprazole,20mg,Capsule,H,15 caps,65.0,HOSP_001
+MED0046,medicine,Rantac,Ranitidine,150mg,Tablet,H,30 tabs,32.0,HOSP_001
+MED0047,medicine,Razo,Rabeprazole,20mg,Tablet,H,10 tabs,85.0,HOSP_001
+MED0048,medicine,Gelusil,Aluminum + Magnesium hydroxide,Combo,Syrup,OTC,170ml,95.0,HOSP_001
+MED0049,medicine,Digene,Aluminum + Magnesium hydroxide,Combo,Tablet,OTC,20 tabs,45.0,HOSP_001
+MED0050,medicine,Glycomet,Metformin,500mg,Tablet,H,20 tabs,28.0,HOSP_001
+MED0051,medicine,Glycomet,Metformin,1000mg,Tablet,H,20 tabs,48.0,HOSP_001
+MED0052,medicine,Glucophage,Metformin,500mg,Tablet,H,20 tabs,32.0,HOSP_001
+MED0053,medicine,Janumet,Sitagliptin + Metformin,50mg+500mg,Tablet,H,14 tabs,285.0,HOSP_001
+MED0054,medicine,Amaryl,Glimepiride,1mg,Tablet,H,10 tabs,78.0,HOSP_001
+MED0055,medicine,Amaryl,Glimepiride,2mg,Tablet,H,10 tabs,145.0,HOSP_001
+MED0056,medicine,Daonil,Glibenclamide,5mg,Tablet,H,20 tabs,32.0,HOSP_001
+MED0057,medicine,Lantus,Insulin Glargine,100IU/ml,Injection,H,3ml pen,1845.0,HOSP_001
+MED0058,medicine,Humalog,Insulin Lispro,100IU/ml,Injection,H,3ml pen,985.0,HOSP_001
+MED0059,medicine,Galvus,Vildagliptin,50mg,Tablet,H,14 tabs,425.0,HOSP_001
+MED0060,medicine,Telma,Telmisartan,40mg,Tablet,H,15 tabs,145.0,HOSP_001
+MED0061,medicine,Telma,Telmisartan,80mg,Tablet,H,15 tabs,245.0,HOSP_001
+MED0062,medicine,Telma-H,Telmisartan + Hydrochlorothiazide,40mg+12.5mg,Tablet,H,15 tabs,175.0,HOSP_001
+MED0063,medicine,Amlong,Amlodipine,5mg,Tablet,H,10 tabs,32.0,HOSP_001
+MED0064,medicine,Amlokind,Amlodipine,5mg,Tablet,H,10 tabs,28.0,HOSP_001
+MED0065,medicine,Concor,Bisoprolol,5mg,Tablet,H,10 tabs,105.0,HOSP_001
+MED0066,medicine,Met-XL,Metoprolol,50mg,Tablet,H,15 tabs,58.0,HOSP_001
+MED0067,medicine,Losar,Losartan,50mg,Tablet,H,15 tabs,88.0,HOSP_001
+MED0068,medicine,Stamlo,Amlodipine,5mg,Tablet,H,10 tabs,35.0,HOSP_001
+MED0069,medicine,Rosuvas,Rosuvastatin,10mg,Tablet,H,15 tabs,145.0,HOSP_001
+MED0070,medicine,Atorva,Atorvastatin,10mg,Tablet,H,10 tabs,65.0,HOSP_001
+MED0071,medicine,Storvas,Atorvastatin,20mg,Tablet,H,10 tabs,95.0,HOSP_001
+MED0072,medicine,Crestor,Rosuvastatin,10mg,Tablet,H,10 tabs,185.0,HOSP_001
+MED0073,medicine,Allegra,Fexofenadine,120mg,Tablet,OTC,10 tabs,175.0,HOSP_001
+MED0074,medicine,Cetzine,Cetirizine,10mg,Tablet,OTC,10 tabs,28.0,HOSP_001
+MED0075,medicine,Levocet,Levocetirizine,5mg,Tablet,OTC,10 tabs,45.0,HOSP_001
+MED0076,medicine,Avil,Pheniramine,25mg,Tablet,OTC,10 tabs,22.0,HOSP_001
+MED0077,medicine,Sinarest,Paracetamol + Phenylephrine + Chlorpheniramine,Combo,Tablet,OTC,10 tabs,38.0,HOSP_001
+MED0078,medicine,Vicks Action 500,Paracetamol + Phenylephrine + Caffeine,Combo,Tablet,OTC,10 tabs,42.0,HOSP_001
+MED0079,medicine,Cofsils,Amyl Metacresol + Dichlorobenzyl Alcohol,Combo,Lozenge,OTC,10 lozenges,35.0,HOSP_001
+MED0080,medicine,Strepsils,Amyl Metacresol + Dichlorobenzyl Alcohol,Combo,Lozenge,OTC,8 lozenges,32.0,HOSP_001
+MED0081,medicine,Benadryl,Diphenhydramine,Syrup,Syrup,OTC,100ml,95.0,HOSP_001
+MED0082,medicine,Ascoril,Bromhexine + Guaifenesin + Terbutaline,Combo,Syrup,H,100ml,145.0,HOSP_001
+MED0083,medicine,Becosules,Vitamin B Complex + C,Combo,Capsule,OTC,20 caps,65.0,HOSP_001
+MED0084,medicine,Neurobion Forte,Vitamin B Complex,Combo,Tablet,OTC,30 tabs,85.0,HOSP_001
+MED0085,medicine,Shelcal,Calcium + Vitamin D3,500mg+250IU,Tablet,OTC,15 tabs,105.0,HOSP_001
+MED0086,medicine,Calcimax,Calcium + Vitamin D3,500mg+250IU,Tablet,OTC,15 tabs,95.0,HOSP_001
+MED0087,medicine,Zincovit,Multivitamin + Zinc,Combo,Tablet,OTC,15 tabs,75.0,HOSP_001
+MED0088,medicine,Limcee,Vitamin C,500mg,Tablet,OTC,15 tabs,32.0,HOSP_001
+MED0089,medicine,Celin,Vitamin C,500mg,Tablet,OTC,15 tabs,32.0,HOSP_001
+MED0090,medicine,Folvite,Folic Acid,5mg,Tablet,OTC,30 tabs,28.0,HOSP_001
+MED0091,medicine,Dexorange,Iron + Folic Acid + B12,Combo,Syrup,OTC,200ml,125.0,HOSP_001
+MED0092,medicine,Orofer-XT,Iron + Folic Acid,100mg+1.5mg,Tablet,OTC,10 tabs,95.0,HOSP_001
+MED0093,medicine,Eltroxin,Levothyroxine,50mcg,Tablet,H,100 tabs,95.0,HOSP_001
+MED0094,medicine,Eltroxin,Levothyroxine,100mcg,Tablet,H,100 tabs,145.0,HOSP_001
+MED0095,medicine,Thyronorm,Levothyroxine,50mcg,Tablet,H,100 tabs,115.0,HOSP_001
+MED0096,medicine,Thyronorm,Levothyroxine,100mcg,Tablet,H,100 tabs,175.0,HOSP_001
+MED0097,medicine,Nexito,Escitalopram,10mg,Tablet,H,10 tabs,105.0,HOSP_001
+MED0098,medicine,Cipralex,Escitalopram,10mg,Tablet,H,10 tabs,245.0,HOSP_001
+MED0099,medicine,Restyl,Alprazolam,0.5mg,Tablet,H1,10 tabs,28.0,HOSP_001
+MED0100,medicine,Alprax,Alprazolam,0.5mg,Tablet,H1,10 tabs,25.0,HOSP_001
+MED0101,medicine,Trika,Alprazolam,0.25mg,Tablet,H1,10 tabs,18.0,HOSP_001
+MED0102,medicine,Retino-A,Tretinoin,0.025%,Cream,H,20g,145.0,HOSP_001
+MED0103,medicine,Retino-A,Tretinoin,0.05%,Cream,H,20g,165.0,HOSP_001
+MED0104,medicine,Clindac-A,Clindamycin,1%,Gel,H,15g,95.0,HOSP_001
+MED0105,medicine,Benzac-AC,Benzoyl Peroxide,2.5%,Gel,OTC,20g,165.0,HOSP_001
+MED0106,medicine,Persol,Benzoyl Peroxide,5%,Gel,OTC,15g,145.0,HOSP_001
+MED0107,medicine,Acnedap,Adapalene,0.1%,Gel,H,15g,175.0,HOSP_001
+MED0108,medicine,Saslic,Salicylic Acid,2%,Face Wash,OTC,60ml,185.0,HOSP_001
+MED0109,medicine,Lasix,Furosemide,40mg,Tablet,H,15 tabs,28.0,HOSP_001
+MED0110,medicine,Dytor,Torsemide,10mg,Tablet,H,15 tabs,95.0,HOSP_001
+MED0111,medicine,Zolfresh,Zolpidem,10mg,Tablet,H1,10 tabs,95.0,HOSP_001
+MED0112,medicine,Restwell,Zolpidem,10mg,Tablet,H1,10 tabs,85.0,HOSP_001
+MED0113,medicine,Refresh Tears,Carboxymethylcellulose,0.5%,Eye Drops,OTC,10ml,95.0,HOSP_001
+MED0114,medicine,Moxicip,Moxifloxacin,0.5%,Eye Drops,H,5ml,145.0,HOSP_001
+MED0115,medicine,Ciplox,Ciprofloxacin,0.3%,Eye Drops,H,10ml,38.0,HOSP_001
+MED0116,medicine,Predmet,Prednisolone,1%,Eye Drops,H,5ml,85.0,HOSP_001
+MED0117,medicine,Asthalin,Salbutamol,100mcg,Inhaler,H,200 doses,165.0,HOSP_001
+MED0118,medicine,Foracort,Formoterol + Budesonide,Combo,Inhaler,H,120 doses,485.0,HOSP_001
+MED0119,medicine,Levolin,Levosalbutamol,1mg,Tablet,H,10 tabs,45.0,HOSP_001
+MED0120,medicine,Montair-LC,Montelukast + Levocetirizine,10mg+5mg,Tablet,H,10 tabs,245.0,HOSP_001
+MED0121,medicine,Loperamide,Loperamide,2mg,Capsule,OTC,10 caps,28.0,HOSP_001
+MED0122,medicine,ORS,Oral Rehydration Salts,21g sachet,Powder,OTC,21g,22.0,HOSP_001
+MED0123,medicine,Electral,Oral Rehydration Salts,21g sachet,Powder,OTC,21g,25.0,HOSP_001
+MED0124,medicine,Norflox-TZ,Norfloxacin + Tinidazole,400mg+600mg,Tablet,H,10 tabs,95.0,HOSP_001
+MED0125,medicine,Pudin Hara,Mentha Oil,10mg,Capsule,OTC,30 caps,65.0,HOSP_001
+MED0126,medicine,Cyclopam,Dicyclomine + Paracetamol,20mg+500mg,Tablet,H,10 tabs,48.0,HOSP_001
+MED0127,medicine,Drotin,Drotaverine,80mg,Tablet,H,10 tabs,75.0,HOSP_001
+MED0128,medicine,Buscogast,Hyoscine Butylbromide,10mg,Tablet,H,10 tabs,45.0,HOSP_001
+TST0001,test,CBC,Complete Blood Count,,Blood Test,,,350.0,HOSP_001
+TST0002,test,HbA1c,Glycated Hemoglobin,,Blood Test,,,550.0,HOSP_001
+TST0003,test,FBS,Fasting Blood Sugar,,Blood Test,,,100.0,HOSP_001
+TST0004,test,PPBS,Post-Prandial Blood Sugar,,Blood Test,,,100.0,HOSP_001
+TST0005,test,RBS,Random Blood Sugar,,Blood Test,,,80.0,HOSP_001
+TST0006,test,Lipid Profile,"Lipid Profile (Cholesterol, HDL, LDL, Triglycerides)",,Blood Test,,,750.0,HOSP_001
+TST0007,test,LFT,Liver Function Test,,Blood Test,,,850.0,HOSP_001
+TST0008,test,KFT,Kidney Function Test,,Blood Test,,,750.0,HOSP_001
+TST0009,test,RFT,Renal Function Test,,Blood Test,,,750.0,HOSP_001
+TST0010,test,TFT,"Thyroid Function Test (T3, T4, TSH)",,Blood Test,,,650.0,HOSP_001
+TST0011,test,TSH,Thyroid Stimulating Hormone,,Blood Test,,,350.0,HOSP_001
+TST0012,test,Vitamin D,25-Hydroxy Vitamin D,,Blood Test,,,1450.0,HOSP_001
+TST0013,test,Vitamin B12,Vitamin B12 Serum,,Blood Test,,,1250.0,HOSP_001
+TST0014,test,Urine Routine,Urine Routine and Microscopy,,Urine Test,,,200.0,HOSP_001
+TST0015,test,Urine Culture,Urine Culture and Sensitivity,,Microbiology,,,850.0,HOSP_001
+TST0016,test,Stool Routine,Stool Routine and Microscopy,,Stool Test,,,250.0,HOSP_001
+TST0017,test,ECG,Electrocardiogram,,Cardiac,,,350.0,HOSP_001
+TST0018,test,Echo,Echocardiogram,,Cardiac,,,2500.0,HOSP_001
+TST0019,test,TMT,Treadmill Test,,Cardiac,,,2000.0,HOSP_001
+TST0020,test,X-Ray Chest,Chest X-Ray PA View,,Radiology,,,450.0,HOSP_001
+TST0021,test,X-Ray Abdomen,Abdomen X-Ray,,Radiology,,,450.0,HOSP_001
+TST0022,test,USG Abdomen,Ultrasound Abdomen,,Radiology,,,1500.0,HOSP_001
+TST0023,test,USG Pelvis,Ultrasound Pelvis,,Radiology,,,1500.0,HOSP_001
+TST0024,test,CT Brain,CT Scan Brain Plain,,Radiology,,,3500.0,HOSP_001
+TST0025,test,MRI Brain,MRI Brain Plain,,Radiology,,,6500.0,HOSP_001
+TST0026,test,Pap Smear,Pap Smear Test,,Cytology,,,850.0,HOSP_001
+TST0027,test,Biopsy,Histopathology Biopsy,,Pathology,,,2500.0,HOSP_001
+TST0028,test,Skin Scraping,KOH Mount / Skin Scraping,,Microbiology,,,350.0,HOSP_001
+TST0029,test,Wood's Lamp,Wood's Lamp Examination,,Dermatology,,,250.0,HOSP_001
+TST0030,test,Skin Biopsy,Skin Punch Biopsy,,Pathology,,,2200.0,HOSP_001
+TST0031,test,Allergy Panel,Allergy Panel - Food,,Immunology,,,4500.0,HOSP_001
+TST0032,test,PSA,Prostate Specific Antigen,,Blood Test,,,850.0,HOSP_001
+TST0033,test,CRP,C-Reactive Protein,,Blood Test,,,450.0,HOSP_001
+TST0034,test,ESR,Erythrocyte Sedimentation Rate,,Blood Test,,,150.0,HOSP_001
+TST0035,test,HIV,HIV 1 & 2 Antibody,,Serology,,,450.0,HOSP_001
+TST0036,test,Hepatitis B,HBsAg,,Serology,,,350.0,HOSP_001
+TST0037,test,Hepatitis C,Anti-HCV,,Serology,,,750.0,HOSP_001
+TST0038,test,Dengue,Dengue NS1 + IgG + IgM,,Serology,,,1450.0,HOSP_001
+TST0039,test,Malaria,Malaria Parasite Smear,,Microbiology,,,250.0,HOSP_001
+TST0040,test,Typhoid,Widal Test,,Serology,,,250.0,HOSP_001
+TST0041,test,Covid RT-PCR,SARS-CoV-2 RT-PCR,,Microbiology,,,500.0,HOSP_001
+TST0042,test,Mammography,Mammography Bilateral,,Radiology,,,2500.0,HOSP_001
+TST0043,test,Bone Density,DEXA Scan,,Radiology,,,1850.0,HOSP_001
+TST0044,test,EEG,Electroencephalogram,,Neurology,,,1500.0,HOSP_001
+TST0045,test,PFT,Pulmonary Function Test,,Respiratory,,,1200.0,HOSP_001
+TST0046,test,Coagulation,"PT, APTT, INR",,Blood Test,,,650.0,HOSP_001
+TST0047,test,Iron Studies,"Iron, TIBC, Ferritin",,Blood Test,,,1250.0,HOSP_001
+TST0048,test,HCG,Beta HCG (Pregnancy),,Blood Test,,,450.0,HOSP_001
+TST0049,test,Calcium,Serum Calcium,,Blood Test,,,250.0,HOSP_001
+TST0050,test,Electrolytes,"Na, K, Cl, HCO3",,Blood Test,,,450.0,HOSP_001

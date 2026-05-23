@@ -1,0 +1,39 @@
+{
+  "doctor_name": "M. A. MIR",
+  "patient_name": "Mr. Lakhoy",
+  "date": "16/9/25",
+  "diagnosis": "ALD",
+  "medicines": [
+    {
+      "name": "Hepkart",
+      "strength": "400",
+      "form": null,
+      "dosage": "1",
+      "frequency": "twice daily",
+      "duration": null,
+      "quantity": null,
+      "confidence": "high"
+    },
+    {
+      "name": "Udih",
+      "strength": "300",
+      "form": null,
+      "dosage": "1",
+      "frequency": "twice daily",
+      "duration": null,
+      "quantity": null,
+      "confidence": "high"
+    },
+    {
+      "name": "Folrate",
+      "strength": "5mg",
+      "form": null,
+      "dosage": "1",
+      "frequency": "once daily",
+      "duration": null,
+      "quantity": null,
+      "confidence": "high"
+    }
+  ],
+  "warnings": []
+}

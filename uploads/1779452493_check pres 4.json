@@ -1,0 +1,100 @@
+{
+  "doctor_name": "Dr. Shruti Sripati",
+  "patient_name": "Shaheen Begum",
+  "date": "21/01/25",
+  "diagnosis": null,
+  "medicines": [
+    {
+      "name": "Follitrux",
+      "strength": "15mg",
+      "form": "Tablet",
+      "dosage": "1",
+      "frequency": "Every Sunday",
+      "duration": null,
+      "quantity": null,
+      "confidence": "high",
+      "notes": null,
+      "quantity_value": 1
+    },
+    {
+      "name": "Folvite",
+      "strength": "5mg",
+      "form": "Tablet",
+      "dosage": "1",
+      "frequency": "Every Saturday",
+      "duration": null,
+      "quantity": null,
+      "confidence": "high",
+      "notes": null,
+      "quantity_value": 1
+    },
+    {
+      "name": "HCQ",
+      "strength": "200mg",
+      "form": "Tablet",
+      "dosage": null,
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "The instruction '-2' is ambiguous; it could indicate 2 tablets per dose, 2 times daily, or the quantity to be dispensed. No explicit frequency given.",
+      "quantity_value": 1
+    },
+    {
+      "name": "Gemcal Plus",
+      "strength": null,
+      "form": "Tablet",
+      "dosage": null,
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "The instruction '-1' is ambiguous; it could indicate 1 tablet per dose, or the quantity to be dispensed. No explicit frequency or strength given.",
+      "quantity_value": 1
+    }
+  ],
+  "tests": [
+    {
+      "name": "CBP",
+      "urgency": "Monitoring in 2 months",
+      "confidence": "high",
+      "notes": "Complete Blood Picture"
+    },
+    {
+      "name": "CUE",
+      "urgency": "Monitoring in 2 months",
+      "confidence": "high",
+      "notes": "Likely Complete Urine Examination"
+    },
+    {
+      "name": "SGOT",
+      "urgency": "Monitoring in 2 months",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "SGPT",
+      "urgency": "Monitoring in 2 months",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "ESR",
+      "urgency": "Monitoring in 2 months",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "Creatinine",
+      "urgency": "Monitoring in 2 months",
+      "confidence": "high",
+      "notes": null
+    }
+  ],
+  "warnings": [],
+  "image_quality": {
+    "score": 72,
+    "rating": "excellent",
+    "message": "Sharp and clear."
+  }
+}

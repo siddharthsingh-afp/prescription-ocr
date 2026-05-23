@@ -1,0 +1,53 @@
+{
+  "doctor_name": "Dr. Shruti Sripati",
+  "patient_name": "Mrc. Shaheen Begum",
+  "date": "2/01/25",
+  "diagnosis": null,
+  "medicines": [
+    {
+      "name": "Follitrax",
+      "strength": "15mg",
+      "form": "Tablet",
+      "dosage": null,
+      "frequency": "every Sunday",
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Dosage (number of tablets per dose) not explicitly stated."
+    },
+    {
+      "name": "Folvite",
+      "strength": "5mg",
+      "form": "Tablet",
+      "dosage": null,
+      "frequency": "every Saturday",
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Dosage (number of tablets per dose) not explicitly stated."
+    },
+    {
+      "name": "Hca",
+      "strength": "200mg",
+      "form": "Tablet",
+      "dosage": null,
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Dosage and frequency not explicitly stated; a dash symbol is present but its specific meaning (e.g., '1 tablet once daily') is not explicitly defined in text."
+    },
+    {
+      "name": "Gemcal Plus",
+      "strength": null,
+      "form": "Tablet",
+      "dosage": null,
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Strength, dosage, and frequency not explicitly stated. A dash symbol is present but its specific meaning (e.g., '1 tablet once daily') is not explicitly defined in text."
+    }
+  ],
+  "warnings": []
+}

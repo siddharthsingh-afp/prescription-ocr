@@ -1,0 +1,82 @@
+{
+  "doctor_name": "Dr. Palak Jaiswal",
+  "patient_name": "Mr. Devansh Bhardwaj",
+  "date": "13/11/04",
+  "diagnosis": null,
+  "medicines": [
+    {
+      "name": "Bru/Ben",
+      "strength": null,
+      "form": "Tablet",
+      "dosage": "0+0",
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Name 'Bru' or 'Ben' is unclear. Dosage '0+0' is ambiguous. There is a handwritten note '3-dl' next to a bracket encompassing this and the next two medications, which is unclear if it refers to frequency or duration for the group.",
+      "quantity_value": 1
+    },
+    {
+      "name": "Febuxostat",
+      "strength": "40mg",
+      "form": "Tablet",
+      "dosage": "0+0",
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "medium",
+      "notes": "Handwritten as 'Febustot 40g'. '40g' is interpreted as '40mg'. Dosage '0+0' is ambiguous. There is a handwritten note '3-dl' next to a bracket encompassing this and two other medications, which is unclear if it refers to frequency or duration for the group.",
+      "quantity_value": 1
+    },
+    {
+      "name": "CCR",
+      "strength": null,
+      "form": "Tablet",
+      "dosage": "0+0",
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Name 'CCR' is an abbreviation, full drug name unclear. Dosage '0+0' is ambiguous. There is a handwritten note '3-dl' next to a bracket encompassing this and two other medications, which is unclear if it refers to frequency or duration for the group.",
+      "quantity_value": 1
+    },
+    {
+      "name": "Hypertension medication",
+      "strength": null,
+      "form": null,
+      "dosage": "S00",
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Name 'Brufjy' is illegible. 'Hyp' likely indicates Hypertension. Dosage 'S00' is ambiguous.",
+      "quantity_value": 1
+    }
+  ],
+  "tests": [
+    {
+      "name": "Repeat Lipids",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "name": "Uric Acid profile",
+      "urgency": null,
+      "confidence": "high",
+      "notes": null
+    }
+  ],
+  "warnings": [
+    "Lipids ↑ (High Lipids)",
+    "Uric Acid ↑ (High Uric Acid)",
+    "Weight reduction",
+    "Dietary opinion: low-fat diet",
+    "Exercise"
+  ],
+  "image_quality": {
+    "score": 27,
+    "rating": "poor",
+    "message": "Blurry - unreliable."
+  }
+}

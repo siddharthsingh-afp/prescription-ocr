@@ -1,0 +1,64 @@
+{
+  "doctor_name": "Dr. P. SANTOSH",
+  "patient_name": "Uma Ash",
+  "date": "24/10/2021",
+  "diagnosis": null,
+  "medicines": [
+    {
+      "name": "Medoxim",
+      "strength": "50 mg",
+      "form": null,
+      "dosage": null,
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Name 'Medoxim' is probable. Strength unit (mg vs ml), form ('SDUL'), dosage, frequency, and duration are unclear due to illegible handwriting."
+    },
+    {
+      "name": "Meronem",
+      "strength": null,
+      "form": null,
+      "dosage": null,
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Name 'Meronem' is probable. Strength, form (likely injection), dosage, frequency (e.g., 'Bn 2/10/d'), and duration are highly unclear and illegible."
+    },
+    {
+      "name": "Nutumel",
+      "strength": null,
+      "form": null,
+      "dosage": null,
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "low",
+      "notes": "Name 'Nutumel' is uncertain. Strength, form, dosage, frequency ('t.d.s.' or 't.i.d.'), and duration are unclear."
+    },
+    {
+      "name": "Actikool drops",
+      "strength": "100 mg",
+      "form": "drops",
+      "dosage": "10 drops",
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "medium",
+      "notes": "Name 'Actikool drops' is probable, '100 mg' is an interpretation of '100'. Frequency and duration are not specified."
+    },
+    {
+      "name": "Similac Isomil Powder",
+      "strength": null,
+      "form": "Powder",
+      "dosage": null,
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "high",
+      "notes": "Dosage, frequency, and duration are not typically specified for infant formula as they depend on the feeding schedule."
+    }
+  ],
+  "warnings": []
+}

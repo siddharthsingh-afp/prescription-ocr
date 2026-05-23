@@ -1,0 +1,81 @@
+{
+  "doctor_name": "Dr. Shenoy M.V.",
+  "patient_name": "Sanyu",
+  "date": "17/05/2005",
+  "diagnosis": [
+    "Seborrhoeic dermatitis face",
+    "Acral dermatitis"
+  ],
+  "medicines": [
+    {
+      "name": "Seborg Shampoo",
+      "strength": null,
+      "form": "Shampoo",
+      "dosage": null,
+      "frequency": "alternate for hair wash",
+      "duration": null,
+      "quantity": null,
+      "confidence": "medium",
+      "notes": "Dosage not specified. Frequency is implied as alternating with Ketog's shampoo."
+    },
+    {
+      "name": "Ketog's Shampoo",
+      "strength": null,
+      "form": "Shampoo",
+      "dosage": null,
+      "frequency": "alternate for hair wash",
+      "duration": null,
+      "quantity": null,
+      "confidence": "medium",
+      "notes": "Dosage not specified. Frequency is implied as alternating with Seborg shampoo."
+    },
+    {
+      "name": "Cloxia J. Cream",
+      "strength": null,
+      "form": "Cream",
+      "dosage": "on scaly, papules on face and scalp",
+      "frequency": null,
+      "duration": null,
+      "quantity": null,
+      "confidence": "medium",
+      "notes": "Unclear if 'J.' or 'S.' in name. Frequency and duration not specified."
+    },
+    {
+      "name": "Ketoog Cream",
+      "strength": null,
+      "form": "Cream",
+      "dosage": "on face, scalp, side of nose, eyelashes, forehead",
+      "frequency": "twice daily",
+      "duration": "20 days as needed",
+      "quantity": null,
+      "confidence": "high"
+    },
+    {
+      "name": "Orgide Cream",
+      "strength": null,
+      "form": "Cream",
+      "dosage": "on papules on face and scalp",
+      "frequency": "once daily",
+      "duration": "as needed",
+      "quantity": null,
+      "confidence": "high"
+    },
+    {
+      "name": "Tol Flucasil",
+      "strength": "400 mg",
+      "form": "Tablet",
+      "dosage": "1 tablet",
+      "frequency": "once a week",
+      "duration": null,
+      "quantity": "4",
+      "confidence": "medium",
+      "notes": "The last part of the duration is illegible. The name 'Tol Flucasil' is transcribed as written, but could be a brand name or short for Fluconazole."
+    }
+  ],
+  "warnings": [
+    "The full diagnosis is partially illegible ('Acral dermatitis regains and made on' is unclear).",
+    "Dosage and duration for Seborg and Ketog's Shampoos are not explicitly stated.",
+    "Unclear if 'Cloxia J. Cream' or 'Cloxia S. Cream'. Frequency and duration not specified.",
+    "The duration for 'Tol Flucasil' is partially illegible."
+  ]
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prescription OCR</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, "Segoe UI", Arial; background: #f5f7fa; margin: 0; padding: 20px; color: #1a1a1a; }
+.container { max-width: 1400px; margin: 0 auto; }
+h1 { color: #2c3e50; margin: 0 0 8px; }
+.subtitle { color: #6c757d; margin-bottom: 24px; }
+.layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 24px; }
+@media (max-width: 1000px) { .layout { grid-template-columns: 1fr; } }
+.card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+h3 { margin-top: 0; color: #2c3e50; }
+.upload-area { border: 2px dashed #cbd5e0; border-radius: 8px; padding: 40px 20px; text-align: center; cursor: pointer; background: #fafbfc; }
+.upload-area:hover { border-color: #4a90e2; background: #f0f7ff; }
+.upload-area.dragover { border-color: #4a90e2; background: #e3f2fd; }
+.upload-area p { margin: 6px 0; color: #6c757d; }
+.icon { font-size: 40px; margin-bottom: 8px; }
+input[type="file"] { display: none; }
+button { background: #4a90e2; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 14px; cursor: pointer; font-weight: 500; }
+button:hover { background: #357abd; }
+button:disabled { background: #adb5bd; cursor: not-allowed; }
+button.secondary { background: #6c757d; }
+button.danger { background: #dc3545; padding: 4px 10px; font-size: 12px; }
+.preview { margin-top: 16px; text-align: center; }
+.preview img { max-width: 100%; max-height: 360px; border-radius: 6px; border: 1px solid #e2e8f0; }
+.status { margin: 12px 0; padding: 10px 14px; border-radius: 6px; font-size: 14px; }
+.status.loading { background: #fff8e1; color: #8a6d3b; }
+.status.success { background: #e8f5e9; color: #2e7d32; }
+.status.error { background: #ffebee; color: #c62828; }
+.quality-bar { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.quality-bar .label { min-width: 90px; font-size: 13px; color: #495057; }
+.quality-bar .bar { flex: 1; height: 8px; background: #e9ecef; border-radius: 4px; overflow: hidden; }
+.quality-bar .fill { height: 100%; }
+.quality-bar .score { min-width: 36px; text-align: right; font-size: 13px; font-weight: 600; }
+.results { display: none; }
+.meta { background: #f8f9fa; padding: 12px 16px; border-radius: 6px; margin-bottom: 16px; font-size: 14px; line-height: 1.8; }
+.section-title { font-size: 14px; font-weight: 600; color: #495057; margin: 20px 0 10px; text-transform: uppercase; }
+.item { border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; background: #fafbfc; }
+.item.conf-high { border-left: 4px solid #28a745; }
+.item.conf-medium { border-left: 4px solid #ffc107; }
+.item.conf-low { border-left: 4px solid #dc3545; }
+.item.conf-manual { border-left: 4px solid #6c757d; }
+.item-header { display: flex; justify-content: space-between; align-items: start; gap: 10px; }
+.item-controls { display: flex; gap: 4px; align-items: center; }
+.qty-control { display: inline-flex; align-items: center; gap: 6px; }
+.qty-btn { width: 26px; height: 26px; border-radius: 4px; background: #e2e8f0; color: #495057; border: none; cursor: pointer; }
+.qty-input { width: 50px; text-align: center; padding: 4px; font-size: 13px; border: 1px solid #cbd5e0; border-radius: 4px; }
+.editable { padding: 4px 8px; border: 1px solid #cbd5e0; border-radius: 4px; font-size: 13px; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; text-transform: uppercase; }
+.badge.high { background: #d4edda; color: #155724; }
+.badge.medium { background: #fff3cd; color: #856404; }
+.badge.low { background: #f8d7da; color: #721c24; }
+.badge.manual { background: #e2e3e5; color: #383d41; }
+.details-row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; margin-top: 10px; font-size: 12px; }
+.details-row label { color: #6c757d; font-size: 11px; }
+.details-row input { width: 100%; padding: 4px 8px; border: 1px solid #cbd5e0; border-radius: 4px; font-size: 12px; }
+.add-btn { width: 100%; padding: 10px; border: 2px dashed #cbd5e0; background: white; color: #6c757d; border-radius: 6px; cursor: pointer; margin-top: 8px; }
+.warnings { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px 16px; border-radius: 4px; margin-top: 16px; font-size: 13px; }
+.empty { color: #adb5bd; text-align: center; padding: 60px 20px; }
+.action-bar { margin-top: 20px; padding-top: 16px; border-top: 1px solid #e2e8f0; display: flex; gap: 10px; }
+.pill { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 12px; background: #e9ecef; color: #495057; margin-right: 6px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div style="display:flex;justify-content:space-between;align-items:center;">
+    <h1>Prescription OCR</h1>
+    <a href="/bulk" style="color:#4a90e2;text-decoration:none;font-weight:500;">Bulk Upload →</a>
+  </div>
+<p class="subtitle">Upload a prescription...
+  <div class="layout">
+    <div class="card">
+      <h3>1. Upload Prescription</h3>
+      <div id="uploadArea" class="upload-area">
+        <div class="icon">[ + ]</div>
+        <p><strong>Click to choose</strong> or drag and drop</p>
+        <p style="font-size:12px;">JPG, PNG, WEBP</p>
+        <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.webp">
+      </div>
+      <div id="preview" class="preview"></div>
+      <div id="qualityBox"></div>
+      <div id="status"></div>
+      <button id="extractBtn" style="margin-top:12px; display:none;">Extract from Prescription</button>
+    </div>
+    <div class="card">
+      <h3>2. Review and Edit</h3>
+      <div id="empty" class="empty">Upload a prescription on the left to see results here.</div>
+      <div id="results" class="results"></div>
+    </div>
+  </div>
+</div>
+<script>
+const uploadArea=document.getElementById('uploadArea'),fileInput=document.getElementById('fileInput'),
+preview=document.getElementById('preview'),qualityBox=document.getElementById('qualityBox'),
+status=document.getElementById('status'),extractBtn=document.getElementById('extractBtn'),
+resultsDiv=document.getElementById('results'),emptyDiv=document.getElementById('empty');
+let selectedFile=null,data=null;
+
+uploadArea.addEventListener('click',()=>fileInput.click());
+fileInput.addEventListener('change',e=>handleFile(e.target.files[0]));
+uploadArea.addEventListener('dragover',e=>{e.preventDefault();uploadArea.classList.add('dragover');});
+uploadArea.addEventListener('dragleave',()=>uploadArea.classList.remove('dragover'));
+uploadArea.addEventListener('drop',e=>{e.preventDefault();uploadArea.classList.remove('dragover');
+  if(e.dataTransfer.files[0])handleFile(e.dataTransfer.files[0]);});
+
+async function handleFile(file){
+  if(!file)return;
+  selectedFile=file;qualityBox.innerHTML='';status.innerHTML='';
+  const r=new FileReader();r.onload=e=>preview.innerHTML=`<img src="${e.target.result}">`;
+  r.readAsDataURL(file);
+  status.innerHTML='<div class="status loading">Checking image quality...</div>';
+  const fd=new FormData();fd.append('image',file);
+  try{
+    const res=await fetch('/quality',{method:'POST',body:fd});
+    const q=await res.json();renderQ(q);
+    status.innerHTML=`<div class="status success">Loaded: ${file.name}</div>`;
+    extractBtn.style.display='inline-block';
+    extractBtn.disabled=(q.rating==='unusable');
+    if(q.rating==='unusable')status.innerHTML='<div class="status error">Too blurry. Retake.</div>';
+  }catch(err){status.innerHTML=`<div class="status error">Quality check failed</div>`;}
+}
+
+function renderQ(q){
+  const c={excellent:'#28a745',good:'#5cb85c',fair:'#ffc107',poor:'#fd7e14',unusable:'#dc3545',unknown:'#6c757d'};
+  qualityBox.innerHTML=`<div class="quality-bar"><span class="label">Image quality:</span>
+    <div class="bar"><div class="fill" style="width:${q.score}%;background:${c[q.rating]}"></div></div>
+    <span class="score" style="color:${c[q.rating]}">${q.score}/100</span></div>
+    <div style="font-size:12px;color:#6c757d;margin-top:4px;">${q.message}</div>`;
+}
+
+extractBtn.addEventListener('click',async()=>{
+  if(!selectedFile)return;
+  extractBtn.disabled=true;
+  status.innerHTML='<div class="status loading">Extracting (10-30s)...</div>';
+  emptyDiv.style.display='none';resultsDiv.style.display='none';
+  const fd=new FormData();fd.append('image',selectedFile);
+  try{
+    const t0=Date.now();
+    const r=await fetch('/extract',{method:'POST',body:fd});
+    const d=await r.json();
+    const el=((Date.now()-t0)/1000).toFixed(1);
+    if(!r.ok||d.error){status.innerHTML=`<div class="status error">${d.error||'Error'}</div>`;}
+    else{status.innerHTML=`<div class="status success">Done in ${el}s</div>`;data=d;render();}
+  }catch(err){status.innerHTML=`<div class="status error">Network error</div>`;}
+  finally{extractBtn.disabled=false;}
+});
+
+function render(){
+  const meds=data.medicines||[],tests=data.tests||[];
+  let h='<div class="meta">';
+  if(data.doctor_name)h+=`<div><strong>Doctor:</strong> ${data.doctor_name}</div>`;
+  if(data.patient_name)h+=`<div><strong>Patient:</strong> ${data.patient_name}</div>`;
+  if(data.date)h+=`<div><strong>Date:</strong> ${data.date}</div>`;
+  if(data.diagnosis)h+=`<div><strong>Diagnosis:</strong> ${data.diagnosis}</div>`;
+  h+='</div>';
+  h+=`<div><span class="pill">${meds.length} medicines</span><span class="pill">${tests.length} tests</span></div>`;
+  h+=`<div class="section-title">Medicines</div>`;
+  if(meds.length===0)h+='<p style="color:#6c757d;">None detected.</p>';
+  else meds.forEach((m,i)=>h+=renderMed(m,i));
+  h+=`<button class="add-btn" onclick="addMed()">+ Add medicine not detected</button>`;
+  h+=`<div class="section-title">Tests / Investigations</div>`;
+  if(tests.length===0)h+='<p style="color:#6c757d;">None detected.</p>';
+  else tests.forEach((t,i)=>h+=renderTest(t,i));
+  h+=`<button class="add-btn" onclick="addTest()">+ Add test not detected</button>`;
+  if(data.warnings&&data.warnings.length){
+    h+='<div class="warnings"><strong>Warnings:</strong><ul>';
+    data.warnings.forEach(w=>h+=`<li>${w}</li>`);h+='</ul></div>';}
+  h+=`<div class="action-bar"><button class="secondary" onclick="dl()">Download JSON</button>
+    <button onclick="cf()">Confirm Selection</button></div>`;
+  resultsDiv.innerHTML=h;resultsDiv.style.display='block';
+}
+
+function renderMed(m,i){
+  const c=(m.confidence||'manual').toLowerCase();
+  const q=m.quantity_value!=null?m.quantity_value:1;
+  let h=`<div class="item conf-${c}"><div class="item-header"><div style="flex:1">`;
+  h+=`<input class="editable" style="width:100%;max-width:280px;" value="${esc(m.name||'')}" onchange="up(${i},'name',this.value)">`;
+  h+=` <span class="badge ${c}">${c}</span></div>`;
+  h+=`<div class="item-controls"><div class="qty-control">
+    <button class="qty-btn" onclick="cq(${i},-1)">-</button>
+    <input type="number" class="qty-input" min="0" value="${q}" onchange="up(${i},'quantity_value',parseInt(this.value)||0)">
+    <button class="qty-btn" onclick="cq(${i},1)">+</button></div>
+    <button class="danger" onclick="rm(${i})">x</button></div></div>`;
+  h+=`<div class="details-row">
+    <div><label>Strength</label><input value="${esc(m.strength||'')}" onchange="up(${i},'strength',this.value)"></div>
+    <div><label>Frequency</label><input value="${esc(m.frequency||'')}" onchange="up(${i},'frequency',this.value)"></div>
+    <div><label>Duration</label><input value="${esc(m.duration||'')}" onchange="up(${i},'duration',this.value)"></div>
+    <div><label>Form</label><input value="${esc(m.form||'')}" onchange="up(${i},'form',this.value)"></div></div>`;
+  if(m.notes)h+=`<div style="margin-top:6px;font-size:12px;color:#6c757d;font-style:italic;">Note: ${m.notes}</div>`;
+  h+='</div>';return h;
+}
+
+function renderTest(t,i){
+  const c=(t.confidence||'manual').toLowerCase();
+  let h=`<div class="item conf-${c}"><div class="item-header"><div style="flex:1">`;
+  h+=`<input class="editable" style="width:100%;max-width:280px;" value="${esc(t.name||'')}" onchange="upt(${i},'name',this.value)">`;
+  h+=` <span class="badge ${c}">${c}</span></div>`;
+  h+=`<button class="danger" onclick="rmt(${i})">x</button></div>`;
+  if(t.notes)h+=`<div style="margin-top:6px;font-size:12px;color:#6c757d;font-style:italic;">Note: ${t.notes}</div>`;
+  h+='</div>';return h;
+}
+
+function up(i,f,v){data.medicines[i][f]=v;}
+function upt(i,f,v){data.tests[i][f]=v;}
+function cq(i,d){const m=data.medicines[i];m.quantity_value=Math.max(0,(m.quantity_value||1)+d);render();}
+function rm(i){if(confirm('Remove?')){data.medicines.splice(i,1);render();}}
+function rmt(i){if(confirm('Remove?')){data.tests.splice(i,1);render();}}
+function addMed(){data.medicines.push({name:'',confidence:'manual',quantity_value:1});render();}
+function addTest(){data.tests.push({name:'',confidence:'manual'});render();}
+function dl(){
+  const b=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='prescription.json';a.click();}
+function cf(){
+  if(confirm(`${data.medicines.length} meds, ${data.tests.length} tests. Proceed?`)){
+    alert('Confirmed.');console.log('Confirmed:',data);}}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+</script>
+</body>
+</html>
