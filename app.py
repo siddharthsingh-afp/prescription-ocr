@@ -35,7 +35,8 @@ PROMPT = """Analyze this doctor's prescription from India. Extract as JSON:
 Rules: If unclear, set null + low confidence. Do NOT guess.
 Return ONLY valid JSON, no markdown."""
 
-client = genai.Client()
+import os
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 
 def extract(image_bytes, mime):
