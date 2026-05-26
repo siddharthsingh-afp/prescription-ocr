@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn compare_fixed:app
