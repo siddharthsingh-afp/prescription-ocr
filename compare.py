@@ -18,8 +18,10 @@ import anthropic
 from flask import Flask, request, jsonify, render_template_string
 from google import genai
 from google.genai import types
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 UPLOAD_FOLDER = Path("uploads_compare")
 UPLOAD_FOLDER.mkdir(exist_ok=True)
