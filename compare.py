@@ -1,8 +1,14 @@
 """Prescription OCR Comparison - Gemini Flash vs Claude Sonnet."""
 
+import os
+
+# ============== PUT YOUR API KEYS HERE ==============
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+CLAUDE_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
+# ====================================================
+
 import base64
 import json
-import os
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -31,9 +37,9 @@ PROMPT = """Analyze this doctor's prescription from India. Extract as JSON:
 Rules: If unclear, set null + low confidence. Do NOT guess.
 Return ONLY valid JSON, no markdown."""
 
-# Initialize clients with environment variables
-gemini_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
-claude_client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+# Initialize clients with keys from top of file
+gemini_client = genai.Client(api_key=GEMINI_API_KEY)
+claude_client = anthropic.Anthropic(api_key=CLAUDE_API_KEY)
 
 
 def extract_gemini(image_bytes, mime):
@@ -141,9 +147,10 @@ td{padding:10px;border-bottom:1px solid #f0f0f0;vertical-align:top}
 <div class="container"><h1>OCR Comparison Tool</h1>
 <p style="color:#6c757d;margin-bottom:24px;font-size:14px">Upload one prescription. Compare Gemini Flash vs Claude Sonnet side-by-side.</p>
 <div class="card"><div id="uploadArea" class="upload-area">
-<p><strong>Click to choose</strong> or drag a prescription image</p>
+<p><strong>Click to choose file</strong> or <strong id="cameraBtn" style="color:#4a90e2;cursor:pointer">open camera</strong></p>
 <p style="font-size:12px;color:#6c757d">JPG, PNG, WEBP</p>
-<input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.webp"></div>
+<input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.webp">
+<input type="file" id="cameraInput" accept="image/*" capture="environment"></div>
 <div id="preview" class="preview"></div><div id="status"></div>
 <button id="compareBtn" style="display:none">Run Comparison</button></div>
 <div id="results" style="display:none"></div></div>
@@ -154,6 +161,8 @@ compareBtn=document.getElementById('compareBtn'),results=document.getElementById
 let selectedFile=null,lastResults=null;
 ua.addEventListener('click',()=>fi.click());
 fi.addEventListener('change',e=>handleFile(e.target.files[0]));
+document.getElementById('cameraBtn').addEventListener('click',(e)=>{e.stopPropagation();document.getElementById('cameraInput').click()});
+document.getElementById('cameraInput').addEventListener('change',e=>handleFile(e.target.files[0]));
 ua.addEventListener('dragover',e=>{e.preventDefault();ua.classList.add('dragover')});
 ua.addEventListener('dragleave',()=>ua.classList.remove('dragover'));
 ua.addEventListener('drop',e=>{e.preventDefault();ua.classList.remove('dragover');
@@ -259,6 +268,8 @@ if __name__ == "__main__":
     print("=" * 60)
     print("OCR Comparison - Gemini Flash vs Claude Sonnet")
     print("=" * 60)
+    print()
+    print("⚠️  IMPORTANT: Edit lines 5-6 with your API keys!")
     print()
     print("Open: http://localhost:5002")
     print()
