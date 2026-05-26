@@ -1,6 +1,7 @@
 """Prescription OCR Comparison - Gemini Flash vs Claude Sonnet."""
 
 import os
+from flask_cors import CORS
 
 # ============== PUT YOUR API KEYS HERE ==============
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
