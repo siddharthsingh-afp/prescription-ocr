@@ -31,14 +31,44 @@ ALLOWED = {".jpg", ".jpeg", ".png", ".webp"}
 MIMES = {".jpg": "image/jpeg", ".jpeg": "image/jpeg",
          ".png": "image/png", ".webp": "image/webp"}
 
-PROMPT = """Analyze this doctor's prescription from India. Extract as JSON:
-- doctor_name, patient_name, date, diagnosis (if visible)
-- medicines: list of {name, strength, form, dosage, frequency, duration, quantity, confidence (high/medium/low), notes}
-- tests: list of {name, urgency, confidence, notes}
-- warnings: list of strings
+PROMPT = """You are a medical document reader. Look at this image and do TWO things.
 
-Rules: If unclear, set null + low confidence. Do NOT guess.
-Return ONLY valid JSON, no markdown."""
+STEP 1 — Classify the document into exactly ONE type:
+  prescription | lab_report | bill | imaging | discharge | other
+
+STEP 2 — Extract everything written/printed on it.
+
+Return ONLY valid JSON (no markdown) in this exact shape:
+{
+  "document_type": "prescription",
+  "type_confidence": "high",
+  "is_handwritten": true,
+  "patient_name": null,
+  "doctor_name": null,
+  "hospital_name": null,
+  "date": null,
+  "summary": "one short line describing the document",
+  "fields": {
+     ... type-specific data, see below ...
+  },
+  "raw_text": "all visible text, line by line, exactly as written",
+  "warnings": []
+}
+
+Type-specific "fields":
+- prescription: { "diagnosis": null, "medicines": [{"name","strength","frequency","duration","quantity","confidence"}], "tests": [{"name","confidence"}] }
+- lab_report: { "tests": [{"name","value","unit","reference_range","flag","confidence"}] }
+- bill: { "items": [{"description","amount","confidence"}], "total_amount": null, "gst": null }
+- imaging: { "scan_type": null, "body_part": null, "findings": null, "impression": null }
+- discharge: { "admission_date": null, "discharge_date": null, "diagnosis": null, "procedures": [], "instructions": null }
+- other: { "notes": null }
+
+Rules:
+- type_confidence: high / medium / low
+- is_handwritten: true if the main content is handwritten, false if printed
+- If a value is unclear, use null + "confidence":"low". NEVER guess.
+- Always fill "raw_text" with everything you can read.
+"""
 
 # Initialize clients with keys from top of file
 gemini_client = genai.Client(api_key=GEMINI_API_KEY)
